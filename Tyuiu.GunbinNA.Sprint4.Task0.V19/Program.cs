@@ -31,7 +31,7 @@ namespace Tyuiu.GunbinNA.Sprint4.Task0.V19
             int[] array = { 9, 5, 7, 4, 5, 3, 7, 8, 9, 1 };
 
             for (int i = 0; i <= array.Length - 1; i++)
-                Console.WriteLine(array[i]+);
+                Console.WriteLine(array[i]);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*РЕЗУЛЬТАТ:                                                               *");

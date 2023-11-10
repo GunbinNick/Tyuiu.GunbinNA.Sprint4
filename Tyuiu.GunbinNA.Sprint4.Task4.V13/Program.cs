@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.GunbinNA.Sprint4.Task3.V17.Lib;
+using Tyuiu.GunbinNA.Sprint4.Task4.V13.Lib;
 
-namespace Tyuiu.GunbinNA.Sprint4.Task3.V17
+namespace Tyuiu.GunbinNA.Sprint4.Task4.V13
 {
     class Program
     {
@@ -15,23 +15,38 @@ namespace Tyuiu.GunbinNA.Sprint4.Task3.V17
             Console.Title = "Спринт #3 | Выполнил: Гунбин Н. А. | СМАРТб-23-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*Спринт #3                                                                *");
-            Console.WriteLine("*Тема: Двумерные массивы(статический ввод)                                *");
-            Console.WriteLine("*Задание #4.3                                                             *");
-            Console.WriteLine("*Вариант #17                                                              *");
+            Console.WriteLine("*Тема: Двумерные массивы(ввод с клавиатуры)                               *");
+            Console.WriteLine("*Задание #4.4                                                             *");
+            Console.WriteLine("*Вариант #13                                                              *");
             Console.WriteLine("*Выполнил: Гунбин Никита Анатольевич | СМАРТб-23-1                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*УСЛОВИЕ:                                                                 *");
-            Console.WriteLine("*Дан двумерный целочисленный массив на 5 на 5 элементов заполненный       *");
-            Console.WriteLine("*статическими значениями в диапазоне от 1 до 8. Найдите сумму элементов   *");
-            Console.WriteLine("*в четвертом столбце массива.                                             *");
+            Console.WriteLine("*Дан двумерный целочисленный массив на 5 на 5 элементов, заполненный      *");
+            Console.WriteLine("*значениями с клавиатуры в диапазоне от 3 до 7. Найдите сумму четных      *");
+            Console.WriteLine("*элементов массива.                                                       *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("*ИСХОДНЫЕ ДАННЫЕ                                                          *");
             Console.WriteLine("***************************************************************************");
 
-            int[,] array = new int[5, 5] { { 6, 4, 2, 2, 1 }, { 3, 6, 5, 4, 1 }, { 5, 2, 3, 1, 6 }, { 8, 8, 4, 5, 3 }, { 7, 4, 5, 1, 6 } };
-            int rows = array.GetLength(0);
-            int columns = array.GetLength(1);
-            Console.WriteLine("Массив: ");
+            int rows, columns;
+            Console.Write("Введите кол-во строк массива: ");
+            rows = int.Parse(Console.ReadLine());
+            Console.Write("Введите кол-во столбцов массива: ");
+            columns = int.Parse(Console.ReadLine());
+            int[,] array = new int[rows, columns];
+
+            Console.WriteLine("***************************************************************************");
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write($"Введите значение {i},{j} элемента массива: ");
+                    array[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine("\nМассив: ");
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
